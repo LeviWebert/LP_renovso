@@ -5,15 +5,28 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <script src=""></script>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('form1') }}
         {% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body class="px-2 lg:px-36 xl:px-32 2xl:px-60 flex flex-col items-center place-content-center">
+        {# Sticky bar #}
+        <div class="sticky top-0 w-screen bg-white/75 z-50 flex justify-around py-3">
+            <img class="-left-1 opacity-100" src="{{ asset('../build/images/logo_république.png') }}" alt="logo de la république française arborant ses 3 principes : liberté.Égalité.Fraternité">
+            <div class="sr-only lg:not-sr-only flex flex-col items-end">
+                <h2 class="text-lg font-bold py-2">Artisans Certifiés RGE </h2>
+                <h2 class="text-lg font-bold py-2">Tous vos travaux sont effectués par nos artisans certifiés RGE et QUALIPV</h2>
+            </div>
+
+        </div>
         {% block body %}{% endblock %}
+        <script src="{{ asset('build/form2.js') }}"></script>
     </body>
 </html>

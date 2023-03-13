@@ -1,0 +1,129 @@
+{# formulaire dynamique  #}
+
+<div class="flex justify-center w-full h-full">
+    <div class="w-full">
+        <form action="{{ path('app_form_merci') }}" method="post" id="sheetdb-form" class="relative flex place-content-center h-full">
+            <div class="tab-content h-full active" id="tab-1">
+                <p class="text-base mb-4 font-light"><span class="text-xs">1-></span> Vous Habitez ? *</p>
+                <div class="mb-4 flex flex-col sm:flex-row">
+                    <div class="image-container house my-2 sm:my-0 border border-gray-300 bg-gray-100 hover:bg-gray-200 rounded data-checked:border-2 data-checked:border-neutral-600"
+                         id="house"
+                         data-selector="1"
+                         data-ui="checked"
+                    >
+                        {# icon check #}
+                        <div class="icon-check float-right"
+                             data-selector="1"
+                        >
+                            <div class="relative top-0 right-O bg-neutral-600 h-8 w-8  z-10  rounded-bl-full"></div>
+                            <svg class="absolute z-20 translate-x-3.5 -translate-y-8 -ml-1 mt-0.5"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" zoomAndPan="magnify" viewBox="0 0 30 30.000001" height="18" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="79ca6219e1"><path d="M 0.484375 3.378906 L 29.515625 3.378906 L 29.515625 25.878906 L 0.484375 25.878906 Z M 0.484375 3.378906 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#79ca6219e1)"><path fill="#ffffff" d="M 28.234375 4.191406 L 28.058594 4.058594 C 27.472656 3.589844 26.753906 3.390625 26.082031 3.457031 C 25.363281 3.523438 24.710938 3.835938 24.238281 4.390625 L 18.175781 11.453125 L 14.585938 15.738281 L 11.957031 18.871094 L 10.160156 16.980469 L 9.152344 15.9375 L 5.601562 12.273438 C 5.085938 11.742188 4.414062 11.476562 3.695312 11.429688 C 3.019531 11.386719 2.300781 11.675781 1.785156 12.164062 L 1.605469 12.339844 C 0.507812 13.339844 0.484375 15.074219 1.496094 16.136719 L 4.996094 19.78125 L 6.007812 20.867188 L 10.050781 25.066406 C 10.519531 25.53125 11.148438 25.84375 11.753906 25.863281 C 11.800781 25.863281 11.800781 25.863281 11.824219 25.863281 C 11.867188 25.863281 11.890625 25.863281 11.957031 25.863281 C 11.957031 25.863281 11.957031 25.863281 12.003906 25.863281 C 12.113281 25.863281 12.203125 25.863281 12.339844 25.863281 C 13.058594 25.796875 13.707031 25.488281 14.179688 24.933594 L 20.199219 17.871094 L 22.554688 15.050781 L 28.574219 7.988281 C 29.515625 6.855469 29.382812 5.167969 28.234375 4.191406 Z M 28.234375 4.191406 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+                        </div>
+                        {# image #}
+                        <img class="h-full w-full p-5" src="https://cdn-icons-png.flaticon.com/512/126/126496.png" alt="Maison">
+                        <div class="flex flex-row px-1 py-2">
+                            <div class="box-letter w-1/5 h-1/6 p-1 bg-white text-xs text-gray-500 border border-gray-300 rounded-sm data-checked:bg-neutral-600 data-checked:text-white"
+                                 data-selector="1"
+                                 data-ui="checked"
+                            >A</div>
+                            <p class="font-light text-sm self-center ml-1">Une maison</p>
+                        </div>
+                    </div>
+
+
+                    <div class="image-container building my-2 sm:my-0 border border-gray-300 bg-gray-100 hover:bg-gray-200 rounded  data-checked:border-2 data-checked:border-neutral-600 pt-6"
+                         id="building"
+                         data-selector="2"
+                         data-ui=""
+                    >
+
+                        <div class="icon-check float-right hidden"
+                             data-selector="2"
+                        >
+                            <div class="relative top-0 right-O bg-neutral-600 h-8 w-8  z-10  rounded-bl-full"></div>
+                            <svg class="absolute z-20 translate-x-3.5 -translate-y-8 -ml-1 mt-0.5"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" zoomAndPan="magnify" viewBox="0 0 30 30.000001" height="18" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="79ca6219e1"><path d="M 0.484375 3.378906 L 29.515625 3.378906 L 29.515625 25.878906 L 0.484375 25.878906 Z M 0.484375 3.378906 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#79ca6219e1)"><path fill="#ffffff" d="M 28.234375 4.191406 L 28.058594 4.058594 C 27.472656 3.589844 26.753906 3.390625 26.082031 3.457031 C 25.363281 3.523438 24.710938 3.835938 24.238281 4.390625 L 18.175781 11.453125 L 14.585938 15.738281 L 11.957031 18.871094 L 10.160156 16.980469 L 9.152344 15.9375 L 5.601562 12.273438 C 5.085938 11.742188 4.414062 11.476562 3.695312 11.429688 C 3.019531 11.386719 2.300781 11.675781 1.785156 12.164062 L 1.605469 12.339844 C 0.507812 13.339844 0.484375 15.074219 1.496094 16.136719 L 4.996094 19.78125 L 6.007812 20.867188 L 10.050781 25.066406 C 10.519531 25.53125 11.148438 25.84375 11.753906 25.863281 C 11.800781 25.863281 11.800781 25.863281 11.824219 25.863281 C 11.867188 25.863281 11.890625 25.863281 11.957031 25.863281 C 11.957031 25.863281 11.957031 25.863281 12.003906 25.863281 C 12.113281 25.863281 12.203125 25.863281 12.339844 25.863281 C 13.058594 25.796875 13.707031 25.488281 14.179688 24.933594 L 20.199219 17.871094 L 22.554688 15.050781 L 28.574219 7.988281 C 29.515625 6.855469 29.382812 5.167969 28.234375 4.191406 Z M 28.234375 4.191406 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+                        </div>
+                        <img class="h-full w-full" src="https://rapport-activites-annemasse-agglo.fr/wp-content/uploads/2019/07/CH_2018_logements.png" alt="Immeuble">
+                        <div class="flex flex-row px-1 py-2">
+                            <div class="box-letter w-1/5 h-1/6 p-1 bg-white text-xs text-gray-500 border border-gray-300 rounded-sm data-checked:bg-neutral-600 data-checked:text-white"
+                                 data-selector="2"
+                                 data-ui=""
+                            >B</div>
+                            <p class="font-light text-sm self-center ml-1">Un appartement</p>
+                        </div>
+                    </div>
+                    <input id="choixConstruction" type="text" value="house" hidden>
+                </div>
+
+
+                {% include './blockReusable/messageErrorEmptyInputForm.html.twig' %}
+
+                <button type="button" class="next bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2 " id="1">
+                    Ok
+                    <svg class="float-right ml-1 mt-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" zoomAndPan="magnify" viewBox="0 0 30 30.000001" height="18" preserveAspectRatio="xMidYMid meet" version="1.0"><defs><clipPath id="79ca6219e1"><path d="M 0.484375 3.378906 L 29.515625 3.378906 L 29.515625 25.878906 L 0.484375 25.878906 Z M 0.484375 3.378906 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#79ca6219e1)"><path fill="#ffffff" d="M 28.234375 4.191406 L 28.058594 4.058594 C 27.472656 3.589844 26.753906 3.390625 26.082031 3.457031 C 25.363281 3.523438 24.710938 3.835938 24.238281 4.390625 L 18.175781 11.453125 L 14.585938 15.738281 L 11.957031 18.871094 L 10.160156 16.980469 L 9.152344 15.9375 L 5.601562 12.273438 C 5.085938 11.742188 4.414062 11.476562 3.695312 11.429688 C 3.019531 11.386719 2.300781 11.675781 1.785156 12.164062 L 1.605469 12.339844 C 0.507812 13.339844 0.484375 15.074219 1.496094 16.136719 L 4.996094 19.78125 L 6.007812 20.867188 L 10.050781 25.066406 C 10.519531 25.53125 11.148438 25.84375 11.753906 25.863281 C 11.800781 25.863281 11.800781 25.863281 11.824219 25.863281 C 11.867188 25.863281 11.890625 25.863281 11.957031 25.863281 C 11.957031 25.863281 11.957031 25.863281 12.003906 25.863281 C 12.113281 25.863281 12.203125 25.863281 12.339844 25.863281 C 13.058594 25.796875 13.707031 25.488281 14.179688 24.933594 L 20.199219 17.871094 L 22.554688 15.050781 L 28.574219 7.988281 C 29.515625 6.855469 29.382812 5.167969 28.234375 4.191406 Z M 28.234375 4.191406 " fill-opacity="1" fill-rule="nonzero"/></g></svg>
+                </button>
+            </div>
+            <div class="tab-content h-full place-content-center align-middle pt-14" id="tab-2">
+                <div class="mb-4">
+                    <label for="postal -> mb-2"><span class="text-xs">2-></span>Votre code postal ? (Nécessaire pour calculer vos aides) *</label>
+                    <input type="text" name="postal_code" id="postal_code"
+                           class="w-full py-2 px-5 rounded focus:outline-none"
+                           required>
+                </div>
+                {% include './blockReusable/messageErrorEmptyInputForm.html.twig' %}
+                <div class="flex flex-row ">
+                    <button type="button" class="prev bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2" id="2">Précédent</button>
+                    <button type="button" class="next bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2" id="2">Suivant</button>
+                </div>
+            </div>
+            <div class="tab-content h-full place-content-center align-middle pt-14" id="tab-3">
+                <div class="mb-4">
+                    <label for="name" ><span class="text-xs">3-></span> Votre nom et prénom : *</label>
+                    <input type="text" name="name" id="name"
+                           class="w-full py-2 px-5 rounded focus:outline-none"
+                           required>
+                </div>
+                {% include './blockReusable/messageErrorEmptyInputForm.html.twig' %}
+                <div class="flex flex-row ">
+                    <button type="button" class="prev bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2" id="3">Précédent</button>
+                    <button type="button" class="next bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2" id="3">Suivant</button>
+                </div>
+
+            </div>
+            <div class="tab-content h-full place-content-center align-middle pt-14" id="tab-4">
+                <div class="mb-4">
+                    <label for="email"><span class="text-xs">4-></span>Votre Email (pour vous envoyer les résultats d'éligibilité): *</label>
+                    <input type="email" name="email" id="email"
+                           class="w-full py-2 px-5 rounded focus:outline-none"
+                           required>
+                </div>
+                {% include './blockReusable/messageErrorEmptyInputForm.html.twig' %}
+                <div class="flex flex-row ">
+                    <button type="button" class="prev bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2"  id="4">Précédent</button>
+                    <button type="button" class="next bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2" id="4">Suivant</button>
+                </div>
+
+            </div>
+            <div class="tab-content h-full place-content-center align-middle pt-14" id="tab-5">
+                <div class="mb-4">
+                    <label for="phone"><span class="text-xs">5-></span> Et enfin, pour que nous puissions vous joindre, il nous faut votre numéro : Cette question est requise*</label>
+                    <input type="tel" name="phone" id="phone"
+                           class="w-full py-2 px-5 rounded focus:outline-none"
+                           required>
+                </div>
+                {% include './blockReusable/messageErrorEmptyInputForm.html.twig' %}
+                <div class="flex flex-row ">
+                    <button type="button" class="prev bg-pink-500 text-white rounded-lg px-4 py-2 hover:bg-pink-300 ml-2" id="5">Précédent</button>
+                    <button id="submit" type="submit" class="submit flex items-center bg-pink-700 text-white rounded-lg px-4 py-2 hover:bg-pink-400 ml-2">
+                        <svg class="mr-3 h-5 w-5 animate-spin text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span class="font-medium"> Envoyer </span>
+                    </button>
+                </div>
+
+            </div>
+            <input type="hidden" name="token"  id="token" value="{{ csrf_token('app_pv') }}"/>
+        </form>
+    </div>
+</div>
