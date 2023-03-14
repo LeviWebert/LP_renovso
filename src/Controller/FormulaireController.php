@@ -62,7 +62,7 @@ class FormulaireController extends AbstractController
             $update_sheet = $service->spreadsheets_values->update($spreadsheetId, $update_range, $body, $params);
 
         }
-        return $this->render('formulaire/merci.html.twig', [
+        return $this->render('pageMerci/merci.html.twig', [
             'controller_name' => 'FormulaireController',
         ]);
     }

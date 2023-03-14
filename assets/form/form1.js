@@ -8,7 +8,7 @@ function next(currentTabImg)
     else {
         currentTab = currentTab || 0;
     }
-    let nextTab = parseInt(currentTab) + 1;
+    let nextTab = parseInt(currentTab, 10) + 1;
     document.getElementById("tab-" + currentTab).classList.remove("active");
     document.getElementById("tab-" + nextTab).classList.add("active");
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".prev").forEach(function(element) {
         element.addEventListener("click", function() {
             let currentTab = this.id;
-            let prevTab = parseInt(currentTab) - 1;
+            let prevTab = parseInt(currentTab, 10) - 1;
             document.getElementById("tab-" + currentTab).classList.remove("active");
             document.getElementById("tab-" + prevTab).classList.add("active");
         });
@@ -96,7 +96,7 @@ function verif() {
 function focus(selector) {
     setChecked("box-letter",selector);
     document.querySelectorAll(".icon-check").forEach(item => {
-        const selectorElement = parseInt(item.dataset.selector);
+        const selectorElement = parseInt(item.dataset.selector, 10);
         item.classList.add("hidden");
         item.parentElement.classList.add("pt-6");
         if (selectorElement===selector)
@@ -111,7 +111,7 @@ function focus(selector) {
 
 function setChecked(classe,selector) {
     document.querySelectorAll("."+classe).forEach(function (element) {
-        const selectorElement = parseInt(element.dataset.selector);
+        const selectorElement = parseInt(element.dataset.selector, 10);
         element.dataset.ui = "";
         if (selectorElement===selector)
         {

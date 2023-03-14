@@ -1,4 +1,4 @@
-// Initialize let iables
+// Init of the variable
 let currentTab = 1;
 let serverName = window.location.host;
 console.log(serverName);
@@ -43,7 +43,6 @@ document.querySelectorAll(".prev").forEach(function (el) {
 document.querySelector("form").addEventListener('submit', function (event) {
     event.preventDefault();
     if (validateForm()) {
-        // TODO: Implement form submission logic
         document.querySelector('#submit').firstElementChild.classList.remove("hidden");
         document.querySelector('#submit').firstElementChild.classList.add("ml-4");
         document.querySelector('#submit').lastElementChild.classList.add("hidden");
@@ -114,7 +113,7 @@ function validateForm() {
     return isValid;
 }
 
-// Applie multiple tailwind css class
+// Applies multiple tailwind css class
 document.querySelectorAll("input").forEach(function (element) {
     element.classList.add("caret-pink-500","border-t-0","border-b-2","border-l-0","border-r-0","focus:bg-gray-100","focus:border-black","w-2/3","lg:w-full");
 });
